@@ -1,58 +1,64 @@
 {
-  "build": "3d82589a539b",
+  "build": "96137b0f594f",
+  "wire_encoding": "gzip, zlib level 5 (zlib 1.3.1), as W0-S08 found GitHub Pages sending it",
   "engines": {
     "z3": {
       "version": "5.3.1",
       "wheel": "5.3.1.0",
       "pyodide": "314.0.7",
       "bytes": 20056541,
+      "wireBytes": 12893420,
+      "brotli11Bytes": 8829693,
       "assets": [
         {
-          "path": "/b/3d82589a539b/engines/pyodide/314.0.7/pyodide.mjs",
+          "path": "/b/96137b0f594f/engines/pyodide/314.0.7/pyodide.mjs",
           "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
           "bytes": 17931,
+          "wire": 7161,
+          "brotli11": 6453,
           "type": "text/javascript"
         },
         {
-          "path": "/b/3d82589a539b/engines/pyodide/314.0.7/pyodide.asm.mjs",
+          "path": "/b/96137b0f594f/engines/pyodide/314.0.7/pyodide.asm.mjs",
           "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
           "bytes": 1250344,
+          "wire": 261999,
+          "brotli11": 207390,
           "type": "text/javascript"
         },
         {
-          "path": "/b/3d82589a539b/engines/pyodide/314.0.7/pyodide.asm.wasm",
+          "path": "/b/96137b0f594f/engines/pyodide/314.0.7/pyodide.asm.wasm",
           "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
           "bytes": 9598218,
+          "wire": 3582449,
+          "brotli11": 2741061,
           "type": "application/wasm"
         },
         {
-          "path": "/b/3d82589a539b/engines/pyodide/314.0.7/python_stdlib.zip",
+          "path": "/b/96137b0f594f/engines/pyodide/314.0.7/python_stdlib.zip",
           "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
           "bytes": 2545637,
+          "wire": 2503201,
+          "brotli11": 2487479,
           "type": "application/zip"
         },
         {
-          "path": "/b/3d82589a539b/engines/pyodide/314.0.7/pyodide-lock.json",
+          "path": "/b/96137b0f594f/engines/pyodide/314.0.7/pyodide-lock.json",
           "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
           "bytes": 119077,
+          "wire": 26858,
+          "brotli11": 21689,
           "type": "application/json"
         },
         {
-          "path": "/b/3d82589a539b/engines/z3/5.3.1.0/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "path": "/b/96137b0f594f/engines/z3/5.3.1.0/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
           "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
           "bytes": 6525334,
+          "wire": 6511752,
+          "brotli11": 3365621,
           "type": "application/octet-stream"
         }
       ]
     }
-  },
-  "decoys": [
-    {
-      "path": "/b/3d82589a539b/engines/decoy/tampered.bin",
-      "sha256": "f457aaae694ea59e4593a02a3f893ae3875d804e7ab7054a9fb7bb5a16ea4a4c",
-      "bytes": 40,
-      "type": "application/octet-stream",
-      "note": "the served bytes differ from the listed hash; the service worker must refuse them"
-    }
-  ]
+  }
 }
