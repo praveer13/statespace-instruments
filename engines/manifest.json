@@ -329,6 +329,14 @@
       "rawBytes": 56643,
       "firstLoadBytes": 7474
     },
+    "pairs": {
+      "version": "1",
+      "label": "INS-pairs 1: the S7 interpreter and the paired-state evaluator",
+      "sources": [],
+      "assets": [],
+      "rawBytes": 0,
+      "firstLoadBytes": 0
+    },
     "derivation": {
       "version": "5.3.1",
       "label": "Z3 5.3.1 on Pyodide 314.0.7, the Derivation Board",
