@@ -1,0 +1,1752 @@
+{
+  "schema": "statespace/goal-strips@1",
+  "run": "RUN-goal-replay",
+  "request": "$/lean/plainGoal",
+  "image": "statespace-bench@sha256:701be043775cc261e84a92fe985ef94d524617fdb3d53e2255187932d2ec0f9a",
+  "toolchain": {
+    "version": "4.35.0",
+    "banner": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+    "binary_sha256": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38"
+  },
+  "note": "Every goal is Lean output from $/lean/plainGoal at the start of a tactic (before it runs) or at the end of a proof. null: Lean reported no goal information there. Lines and characters are 0-based, in the cell text.",
+  "cells": [
+    {
+      "lesson": "S2.L0",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L0.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "e1591ae79f6ca8d249fd490ec9acd253fb58e43c63772298dbf3326388459458",
+      "lines": 14,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L0_cell1.lean",
+        "sha256": "32244cc8e6f32183b6e5a0c0decc5a768520ade673c7b4f01302bc56d080294c",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L0_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "transferPos_nonneg",
+          "kind": "theorem",
+          "lines": [
+            8,
+            13
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold transferPos",
+              "line": 10,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\n⊢ 0 ≤ (transferPos s n).a ∧ 0 ≤ (transferPos s n).b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "split",
+              "line": 11,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\n⊢ 0 ≤ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).a ∧\n    0 ≤ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "exact ⟨Int.sub_nonneg_of_le hg.2, Int.add_nonneg hb (Int.le_of_lt hg.1)⟩",
+              "line": 12,
+              "character": 15,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\nhg : 0 < n ∧ n ≤ s.a\n⊢ 0 ≤ { a := s.a - n, b := s.b + n }.a ∧ 0 ≤ { a := s.a - n, b := s.b + n }.b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "exact ⟨ha, hb⟩",
+              "line": 13,
+              "character": 4,
+              "goals": [
+                "case isFalse\ns : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\nh✝ : ¬(0 < n ∧ n ≤ s.a)\n⊢ 0 ≤ s.a ∧ 0 ≤ s.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 13,
+              "character": 18,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L1",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L1.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "be4517e9ae0b8ac8546291ffa96e99d899f15838aa86d07ca1392f1738a49b7e",
+      "lines": 11,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L1_cell1.lean",
+        "sha256": "723a91de495980727e9f9a9a5f24fbca6eafb6db3926b9e8efa1441dfdb3650e",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L1_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "credit2_eq",
+          "kind": "theorem",
+          "lines": [
+            4,
+            10
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "induction k with",
+              "line": 5,
+              "character": 2,
+              "goals": [
+                "k : Nat\n⊢ credit2 k = k + k"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "rfl",
+              "line": 6,
+              "character": 12,
+              "goals": [
+                "case zero\n⊢ credit2 0 = 0 + 0"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "unfold credit2",
+              "line": 8,
+              "character": 4,
+              "goals": [
+                "case succ\nk : Nat\nih : credit2 k = k + k\n⊢ credit2 (k + 1) = k + 1 + (k + 1)"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "rw [ih]",
+              "line": 9,
+              "character": 4,
+              "goals": [
+                "case succ\nk : Nat\nih : credit2 k = k + k\n⊢ credit2 k + 2 = k + 1 + (k + 1)"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "omega",
+              "line": 10,
+              "character": 4,
+              "goals": [
+                "case succ\nk : Nat\nih : credit2 k = k + k\n⊢ k + k + 2 = k + 1 + (k + 1)"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 10,
+              "character": 9,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L2",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L2.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "b85ce5f1207e24155adc04e91b8e6b8b6e665cab995d94c3662baf5bdb526811",
+      "lines": 9,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L2_cell1.lean",
+        "sha256": "61e64fbb0b5ecd2e2e3e19a316277e544ff08baebc4b14f0c54f11715f74e3d9",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L2_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [],
+      "messages": [
+        {
+          "severity": "information",
+          "line": 8,
+          "character": 0,
+          "text": "{ a := 7, b := 3 }"
+        }
+      ]
+    },
+    {
+      "lesson": "S2.L2",
+      "cell": 2,
+      "lesson_file": "content/stages/S2/S2.L2.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "44f1cc889e55832e6dac29001425b97afff679ad69ca75d2fee6b30e4e48c253",
+      "lines": 1,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L2_cell2.lean",
+        "sha256": "af5b522547c00ec96ae28de388cf5dd3f106b8f80d41b424319162c2662e0351",
+        "offset": 8
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L2_cell2.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L3",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L3.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "7e7625e53e1169b0edfdc13e045e61decb987bbca7abf810a3a64f17f0c15f9e",
+      "lines": 14,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L3_cell1.lean",
+        "sha256": "a1394d0e777caf38e122d78cf0be5716500d0f653b1f83b01ba5c73a433914a5",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L3_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "transferPos_conserves",
+          "kind": "theorem",
+          "lines": [
+            10,
+            13
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold transferPos total",
+              "line": 12,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ total (transferPos s n) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "split <;> simp <;> omega",
+              "line": 13,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).a +\n      (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).b =\n    s.a + s.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 13,
+              "character": 26,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L4",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L4.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "b298f4b6aa056312251723c0764599a0c79cd93c5db8027d985a680069c735e6",
+      "lines": 8,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L4_cell1.lean",
+        "sha256": "97896e1629fad43574ecc5968f25ef85cdb1e2f3bf8fbf838c5f9c807acd34a3",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L4_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "net_append",
+          "kind": "theorem",
+          "lines": [
+            4,
+            7
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "induction xs with",
+              "line": 5,
+              "character": 2,
+              "goals": [
+                "xs ys : List Int\n⊢ net (xs ++ ys) = net xs + net ys"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp [net]",
+              "line": 6,
+              "character": 11,
+              "goals": [
+                "case nil\nys : List Int\n⊢ net ([] ++ ys) = net [] + net ys"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp [net, ih, Int.add_assoc]",
+              "line": 7,
+              "character": 20,
+              "goals": [
+                "case cons\nys : List Int\nx : Int\nxs : List Int\nih : net (xs ++ ys) = net xs + net ys\n⊢ net (x :: xs ++ ys) = net (x :: xs) + net ys"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 7,
+              "character": 49,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L4",
+      "cell": 2,
+      "lesson_file": "content/stages/S2/S2.L4.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "ede524ffdb4ecfc4b6d4f28a43a31e52bd847bae6ce7ed06bdc3917190bc9d65",
+      "lines": 4,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L4_cell2.lean",
+        "sha256": "a726f2948444eb99e9ec919125bbd7db2c2a897d9678c09512a25d0df680b055",
+        "offset": 9
+      },
+      "elaborated": "with-errors",
+      "errors": 1,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L4_cell2.lean",
+          "errors": 1
+        },
+        {
+          "kind": "cell",
+          "errors": 5
+        },
+        {
+          "kind": "after-earlier-cells",
+          "errors": 1
+        }
+      ],
+      "strips": [
+        {
+          "decl": "net_append_loop",
+          "kind": "theorem",
+          "lines": [
+            0,
+            3
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "cases xs with",
+              "line": 1,
+              "character": 2,
+              "goals": [
+                "xs ys : List Int\n⊢ net (xs ++ ys) = net xs + net ys"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp [net]",
+              "line": 2,
+              "character": 11,
+              "goals": [
+                "case nil\nys : List Int\n⊢ net ([] ++ ys) = net [] + net ys"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "exact net_append_loop (x :: xs) ys",
+              "line": 3,
+              "character": 17,
+              "goals": [
+                "case cons\nys : List Int\nx : Int\nxs : List Int\n⊢ net (x :: xs ++ ys) = net (x :: xs) + net ys"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 3,
+              "character": 51,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 0,
+          "character": 8,
+          "text": "fail to show termination for\n  net_append_loop\nwith errors\nfailed to infer structural recursion:\nNot considering parameter ys of net_append_loop:\n  it is unchanged in the recursive calls\nCannot use parameter xs:\n  failed to eliminate recursive application\n    net_append_loop (x :: xs) ys\n\n\nfailed to prove termination, possible solutions:\n  - Use `have`-expressions to prove the remaining goals\n  - Use `termination_by` to specify a different well-founded relation\n  - Use `decreasing_by` to specify your own tactic for discharging this kind of goal\nys xs✝ : List Int\na✝ : ∀ (y : List Int), (invImage (fun x => x) sizeOfWFRel).1 y xs✝ → net (y ++ ys) = net y + net ys\nx : Int\nxs : List Int\nx✝ : ∀ (y : List Int), (invImage (fun x => x) sizeOfWFRel).1 y (x :: xs) → net (y ++ ys) = net y + net ys\nh✝ : xs✝ = x :: xs\n⊢ False"
+        }
+      ]
+    },
+    {
+      "lesson": "S2.L5",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L5.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "7e7625e53e1169b0edfdc13e045e61decb987bbca7abf810a3a64f17f0c15f9e",
+      "lines": 14,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L3_cell1.lean",
+        "sha256": "a1394d0e777caf38e122d78cf0be5716500d0f653b1f83b01ba5c73a433914a5",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L3_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "transferPos_conserves",
+          "kind": "theorem",
+          "lines": [
+            10,
+            13
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold transferPos total",
+              "line": 12,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ total (transferPos s n) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "split <;> simp <;> omega",
+              "line": 13,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).a +\n      (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).b =\n    s.a + s.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 13,
+              "character": 26,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L5",
+      "cell": 2,
+      "lesson_file": "content/stages/S2/S2.L5.md",
+      "recorded": "RUN-lean-noguard",
+      "text_sha256": "e9c5d53d7937de55e818d5f2129ee4e82a58d0f5367f7ed55254da0c699cc7dc",
+      "lines": 12,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-noguard/inputs/NoGuardCell.lean",
+        "sha256": "398deee3469a9a07daa448255903acba7449783f32d3315c2b6897f8f88d73de",
+        "offset": 7
+      },
+      "elaborated": "with-errors",
+      "errors": 1,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-noguard/inputs/NoGuardCell.lean",
+          "errors": 1
+        },
+        {
+          "kind": "cell",
+          "errors": 7
+        },
+        {
+          "kind": "after-earlier-cells",
+          "errors": 1
+        }
+      ],
+      "strips": [
+        {
+          "decl": "noGuard_conserves",
+          "kind": "theorem",
+          "lines": [
+            3,
+            7
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold noGuard total",
+              "line": 5,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ total (noGuard s n) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp <;> omega",
+              "line": 6,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ { a := s.a - n, b := s.b + n }.a + { a := s.a - n, b := s.b + n }.b = s.a + s.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 6,
+              "character": 16,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "noGuard_nonneg",
+          "kind": "theorem",
+          "lines": [
+            8,
+            11
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold noGuard",
+              "line": 10,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\n⊢ 0 ≤ (noGuard s n).a ∧ 0 ≤ (noGuard s n).b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp <;> omega",
+              "line": 11,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\n⊢ 0 ≤ { a := s.a - n, b := s.b + n }.a ∧ 0 ≤ { a := s.a - n, b := s.b + n }.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 11,
+              "character": 16,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 11,
+          "character": 11,
+          "text": "omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 0\n  a - c ≤ -1\nwhere\n a := s.a\n b := s.b\n c := n"
+        }
+      ]
+    },
+    {
+      "lesson": "S2.L6",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L6.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "77092f37d2921efc367239c350a388f922fe3bf611a0d120746f2809aec00b0e",
+      "lines": 16,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L6_cell1.lean",
+        "sha256": "77f1a7a2fd9c231071a4e9367ea17d5fc195e4b7bc4eb627b76726708237221b",
+        "offset": 0
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L6_cell1.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "transferPos_nonneg",
+          "kind": "theorem",
+          "lines": [
+            8,
+            14
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold transferPos",
+              "line": 10,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\n⊢ 0 ≤ (transferPos s n).a ∧ 0 ≤ (transferPos s n).b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "split",
+              "line": 11,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\n⊢ 0 ≤ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).a ∧\n    0 ≤ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "exact ⟨Int.sub_nonneg_of_le hg.2, Int.add_nonneg hb (Int.le_of_lt hg.1)⟩",
+              "line": 12,
+              "character": 15,
+              "goals": [
+                "s : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\nhg : 0 < n ∧ n ≤ s.a\n⊢ 0 ≤ { a := s.a - n, b := s.b + n }.a ∧ 0 ≤ { a := s.a - n, b := s.b + n }.b"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "exact ⟨ha, hb⟩",
+              "line": 13,
+              "character": 4,
+              "goals": [
+                "case isFalse\ns : Ledger\nn : Int\nha : 0 ≤ s.a\nhb : 0 ≤ s.b\nh✝ : ¬(0 < n ∧ n ≤ s.a)\n⊢ 0 ≤ s.a ∧ 0 ≤ s.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 13,
+              "character": 18,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "information",
+          "line": 15,
+          "character": 0,
+          "text": "'transferPos_nonneg' depends on axioms: [propext]"
+        }
+      ]
+    },
+    {
+      "lesson": "S2.L7",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L7.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "1cfa3d01f0b677ae2710f730ae67847b70f8240710d25860392348cbdfd958ee",
+      "lines": 10,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L7_alt.lean",
+        "sha256": "d05b7b6de4e285099f0ce5b97b569ea9bcebc93549ee068838b52bd285216e1a",
+        "offset": 14
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L7_alt.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "transferPos_conserves",
+          "kind": "theorem",
+          "lines": [
+            0,
+            4
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "unfold transferPos total",
+              "line": 2,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ total (transferPos s n) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "split <;> simp <;> omega",
+              "line": 3,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nn : Int\n⊢ (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).a +\n      (if 0 < n ∧ n ≤ s.a then { a := s.a - n, b := s.b + n } else s).b =\n    s.a + s.b"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 3,
+              "character": 26,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "runPos_conserves",
+          "kind": "theorem",
+          "lines": [
+            5,
+            9
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "induction ns generalizing s with",
+              "line": 7,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nns : List Int\n⊢ total (runPos s ns) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "rfl",
+              "line": 8,
+              "character": 11,
+              "goals": [
+                "case nil\ns : Ledger\n⊢ total (runPos s []) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp [runPos, ih, transferPos_conserves]",
+              "line": 9,
+              "character": 20,
+              "goals": [
+                "case cons\nn : Int\nns : List Int\nih : ∀ (s : Ledger), total (runPos s ns) = total s\ns : Ledger\n⊢ total (runPos s (n :: ns)) = total s"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 9,
+              "character": 60,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    },
+    {
+      "lesson": "S2.L7",
+      "cell": 2,
+      "lesson_file": "content/stages/S2/S2.L7.md",
+      "recorded": "RUN-lean-ih-ungeneralised",
+      "text_sha256": "f9eb47a4e540e934f16b4c5fab91d6d998af561c6033ef0604ef1ce6f34f38ff",
+      "lines": 19,
+      "source": {
+        "kind": "cell",
+        "sha256": "9aed637d52a060f73cd2cbb7c740c3676cfbb90ff9567323f124a84a4db94c31"
+      },
+      "elaborated": "with-errors",
+      "errors": 1,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 1
+        },
+        {
+          "kind": "after-earlier-cells",
+          "errors": 8
+        }
+      ],
+      "strips": [
+        {
+          "decl": "run_conserves",
+          "kind": "theorem",
+          "lines": [
+            14,
+            18
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "induction ns with",
+              "line": 16,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nns : List Int\n⊢ total (run s ns) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "rfl",
+              "line": 17,
+              "character": 11,
+              "goals": [
+                "case nil\ns : Ledger\n⊢ total (run s []) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "simp [run, ih]",
+              "line": 18,
+              "character": 20,
+              "goals": [
+                "case cons\ns : Ledger\nn : Int\nns : List Int\nih : total (run s ns) = total s\n⊢ total (run s (n :: ns)) = total s"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 18,
+              "character": 34,
+              "goals": [
+                "case cons\ns : Ledger\nn : Int\nns : List Int\nih : total (run s ns) = total s\n⊢ total (run (transfer s n) ns) = total s"
+              ]
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 18,
+          "character": 17,
+          "text": "unsolved goals\ncase cons\ns : Ledger\nn : Int\nns : List Int\nih : total (run s ns) = total s\n⊢ total (run (transfer s n) ns) = total s"
+        },
+        {
+          "severity": "warning",
+          "line": 18,
+          "character": 31,
+          "text": "This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  [apply] simp [run]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        }
+      ]
+    },
+    {
+      "lesson": "S2.L7",
+      "cell": 3,
+      "lesson_file": "content/stages/S2/S2.L7.md",
+      "recorded": "RUN-lean-s2-cells",
+      "text_sha256": "f07928fa17944e577d4919708d9e2932414af3412ad31def49ab92365d2d43ac",
+      "lines": 5,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-s2-cells/inputs/L7_cell3.lean",
+        "sha256": "cbc6c7c4414ebd0cc7d4eeccfc26c0168408c7247b6a3d0157f4ba235f5086df",
+        "offset": 19
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-s2-cells/inputs/L7_cell3.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "runPos_conserves",
+          "kind": "theorem",
+          "lines": [
+            0,
+            4
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "induction ns generalizing s with",
+              "line": 2,
+              "character": 2,
+              "goals": [
+                "s : Ledger\nns : List Int\n⊢ total (runPos s ns) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "rfl",
+              "line": 3,
+              "character": 11,
+              "goals": [
+                "case nil\ns : Ledger\n⊢ total (runPos s []) = total s"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "sorry",
+              "line": 4,
+              "character": 20,
+              "goals": [
+                "case cons\nn : Int\nns : List Int\nih : ∀ (s : Ledger), total (runPos s ns) = total s\ns : Ledger\n⊢ total (runPos s (n :: ns)) = total s"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 4,
+              "character": 25,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "warning",
+          "line": 0,
+          "character": 8,
+          "text": "declaration uses `sorry`"
+        }
+      ]
+    },
+    {
+      "lesson": "S2.L9",
+      "cell": 1,
+      "lesson_file": "content/stages/S2/S2.L9.md",
+      "recorded": "RUN-lean-axioms",
+      "text_sha256": "7f6f2082ee46853b5043a768020b2d5f33c1c36ba01bb25c35657490ffdaa4ad",
+      "lines": 17,
+      "source": {
+        "kind": "cell",
+        "sha256": "4b6ba815784db66e17779399897813799fde99cc6fc4ac69e7621f3bd8602148"
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "by_omega",
+          "kind": "theorem",
+          "lines": [
+            1,
+            1
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "omega",
+              "line": 1,
+              "character": 59,
+              "goals": [
+                "x y : Int\nh : x ≤ y\n⊢ x - 1 < y"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 1,
+              "character": 64,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "big_native",
+          "kind": "theorem",
+          "lines": [
+            3,
+            3
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "native_decide",
+              "line": 3,
+              "character": 48,
+              "goals": [
+                "⊢ 2 ^ 64 % 7 = 2"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 3,
+              "character": 61,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "by_decide",
+          "kind": "theorem",
+          "lines": [
+            5,
+            5
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 5,
+              "character": 47,
+              "goals": [
+                "⊢ 2 ^ 10 % 7 = 2"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 5,
+              "character": 53,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "with_sorry",
+          "kind": "theorem",
+          "lines": [
+            7,
+            7
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "sorry",
+              "line": 7,
+              "character": 41,
+              "goals": [
+                "⊢ 1 = 2"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 7,
+              "character": 46,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "warning",
+          "line": 7,
+          "character": 8,
+          "text": "declaration uses `sorry`"
+        },
+        {
+          "severity": "information",
+          "line": 12,
+          "character": 0,
+          "text": "'by_omega' depends on axioms: [propext, Quot.sound]"
+        },
+        {
+          "severity": "information",
+          "line": 13,
+          "character": 0,
+          "text": "'big_native' depends on axioms: [big_native._native.native_decide.ax_1_1]"
+        },
+        {
+          "severity": "information",
+          "line": 14,
+          "character": 0,
+          "text": "'by_decide' does not depend on any axioms"
+        },
+        {
+          "severity": "information",
+          "line": 15,
+          "character": 0,
+          "text": "'with_sorry' depends on axioms: [sorryAx]"
+        },
+        {
+          "severity": "information",
+          "line": 16,
+          "character": 0,
+          "text": "'with_axiom' depends on axioms: [cheat]"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L1",
+      "cell": 2,
+      "lesson_file": "content/stages/S3/S3.L1.md",
+      "recorded": "RUN-lean-stuck",
+      "text_sha256": "b6bd108cde6ab165d48416a8be739758e0f0c637d62cb03ac460d4f96d3f92df",
+      "lines": 7,
+      "source": {
+        "kind": "run-input",
+        "path": "runs/RUN-lean-stuck/inputs/OddCheck.lean",
+        "sha256": "17dd7b120d935bb8b0d0c8c171582a957993b6a42ce331afc89197c6ef420fce",
+        "offset": 32
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "run-input",
+          "path": "runs/RUN-lean-stuck/inputs/OddCheck.lean",
+          "errors": 0
+        }
+      ],
+      "strips": [],
+      "messages": [
+        {
+          "severity": "information",
+          "line": 6,
+          "character": 0,
+          "text": "odd : Cmd"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L2",
+      "cell": 3,
+      "lesson_file": "content/stages/S3/S3.L2.md",
+      "recorded": "RUN-lean-golden-harness",
+      "text_sha256": "17e80159d3faa0af17adb0204454d0ca6af9dffb7e2beb51a1184bb17053c607",
+      "lines": 11,
+      "source": {
+        "kind": "cell",
+        "sha256": "e393f89fbfdd07ea229c6cc298b24e02118515076d3d15943c7dffb91ded8e41"
+      },
+      "elaborated": "with-errors",
+      "errors": 1,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 1
+        }
+      ],
+      "strips": [
+        {
+          "decl": "example at line 3",
+          "kind": "example",
+          "lines": [
+            2,
+            3
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 2,
+              "character": 28,
+              "goals": [
+                "⊢ 0 < 30"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 2,
+              "character": 34,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "example at line 5",
+          "kind": "example",
+          "lines": [
+            4,
+            5
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 4,
+              "character": 27,
+              "goals": [
+                "⊢ 0 < 0"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 4,
+              "character": 33,
+              "goals": [
+                "⊢ 0 < 0"
+              ]
+            }
+          ]
+        },
+        {
+          "decl": "Amount.add",
+          "kind": "def",
+          "lines": [
+            6,
+            10
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "have ha := a.property",
+              "line": 8,
+              "character": 4,
+              "goals": [
+                "a b : Amount\n⊢ 0 < a.val + b.val"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "have hb := b.property",
+              "line": 9,
+              "character": 4,
+              "goals": [
+                "a b : Amount\nha : 0 < a.val\n⊢ 0 < a.val + b.val"
+              ]
+            },
+            {
+              "when": "before",
+              "tactic": "omega",
+              "line": 10,
+              "character": 4,
+              "goals": [
+                "a b : Amount\nha : 0 < a.val\nhb : 0 < b.val\n⊢ 0 < a.val + b.val"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 10,
+              "character": 9,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 4,
+          "character": 27,
+          "text": "Tactic `decide` proved that the proposition\n  0 < 0\nis false"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L5",
+      "cell": 1,
+      "lesson_file": "content/stages/S3/S3.L5.md",
+      "recorded": "RUN-lean-progress",
+      "text_sha256": "a08264e85703d8638269244e2e6eb3fbd68d1519ec0fba79d09563ba2a44d9d2",
+      "lines": 5,
+      "source": {
+        "kind": "cell",
+        "sha256": "c37cfd3afb953ea0626dcbd790625caf98243bd990cd7e1770d64df923d58b84"
+      },
+      "elaborated": "needs-context",
+      "errors": 12,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 12
+        }
+      ],
+      "strips": [],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 0,
+          "character": 36,
+          "text": "Function expected at\n  Typed\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  c\n\nHint: The identifier `Typed` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 0,
+          "character": 46,
+          "text": "Function expected at\n  Final\nbut this term has type\n  ?m.3\n\nNote: Expected a function because this term is being applied to the argument\n  c\n\nHint: The identifier `Final` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 0,
+          "character": 62,
+          "text": "Function expected at\n  Step\nbut this term has type\n  ?m.4\n\nNote: Expected a function because this term is being applied to the argument\n  c\n\nHint: The identifier `Step` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 0,
+          "character": 71,
+          "text": "unexpected token 'theorem'; expected ':=', 'where' or '|'"
+        },
+        {
+          "severity": "error",
+          "line": 1,
+          "character": 36,
+          "text": "Function expected at\n  Typed\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  c\n\nHint: The identifier `Typed` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 1,
+          "character": 46,
+          "text": "Function expected at\n  Step\nbut this term has type\n  ?m.3\n\nNote: Expected a function because this term is being applied to the argument\n  c\n\nHint: The identifier `Step` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 1,
+          "character": 58,
+          "text": "Function expected at\n  Typed\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  c'\n\nHint: The identifier `Typed` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 1,
+          "character": 66,
+          "text": "unexpected token 'theorem'; expected ':=', 'where' or '|'"
+        },
+        {
+          "severity": "error",
+          "line": 4,
+          "character": 4,
+          "text": "Unknown identifier `p.WellTyped`"
+        },
+        {
+          "severity": "error",
+          "line": 4,
+          "character": 26,
+          "text": "Function expected at\n  exec\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  p\n\nHint: The identifier `exec` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 4,
+          "character": 39,
+          "text": "Invalid dotted identifier notation: The expected type of `.ok` could not be determined\n\nHint: Using one of these would be unambiguous:\n  [apply] `Except.ok`\n  [apply] `EST.Out.ok`\n  [apply] `EStateM.Result.ok`"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L6",
+      "cell": 1,
+      "lesson_file": "content/stages/S3/S3.L6.md",
+      "recorded": "RUN-lean-step-invariant",
+      "text_sha256": "5df1eca63d965b8f563e2313532c8cdf313600d504d09ec18da35b50c316f814",
+      "lines": 28,
+      "source": {
+        "kind": "cell",
+        "sha256": "fd8981ce6b26013942a8bce6cc12897825fcb030906d564ea1033b5f298ffa71"
+      },
+      "elaborated": "needs-context",
+      "errors": 6,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 6
+        }
+      ],
+      "strips": [],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 7,
+          "character": 12,
+          "text": "Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression\n  s\nhas type `State` which does not have the necessary form."
+        },
+        {
+          "severity": "error",
+          "line": 8,
+          "character": 2,
+          "text": "Invalid field notation: Type of\n  s1\nis not known; cannot resolve field `setBal`"
+        },
+        {
+          "severity": "error",
+          "line": 11,
+          "character": 29,
+          "text": "Invalid dotted identifier notation: The expected type of `.mint`\n  Acct\nis not of the form `C ...` or `... → C ...` where C is a constant"
+        },
+        {
+          "severity": "error",
+          "line": 11,
+          "character": 41,
+          "text": "Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression\n  s\nhas type `State` which does not have the necessary form."
+        },
+        {
+          "severity": "error",
+          "line": 11,
+          "character": 60,
+          "text": "Application type mismatch: The argument\n  s\nhas type\n  State\nbut is expected to have type\n  Type ?u.17\nin the application\n  Inv s"
+        },
+        {
+          "severity": "error",
+          "line": 12,
+          "character": 14,
+          "text": "Application type mismatch: The argument\n  s\nhas type\n  State\nbut is expected to have type\n  Type ?u.19\nin the application\n  post s"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L6",
+      "cell": 2,
+      "lesson_file": "content/stages/S3/S3.L6.md",
+      "recorded": "RUN-lean-step-invariant",
+      "text_sha256": "94aaa463e6ae4ef80f2a0fe902022a76b6aa44bd49384caf66fbeaa01350a88f",
+      "lines": 23,
+      "source": {
+        "kind": "cell",
+        "sha256": "cd1a3c7f71da4ce2ffb2f274925eb5f5bac146d482099ddeb9900dfc75c84301"
+      },
+      "elaborated": "needs-context",
+      "errors": 19,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 19
+        },
+        {
+          "kind": "after-earlier-cells",
+          "errors": 25
+        }
+      ],
+      "strips": [],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 2,
+          "character": 12,
+          "text": "Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression\n  n\nhas type `Amount` which does not have the necessary form."
+        },
+        {
+          "severity": "error",
+          "line": 2,
+          "character": 20,
+          "text": "Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression\n  s\nhas type `State` which does not have the necessary form."
+        },
+        {
+          "severity": "error",
+          "line": 2,
+          "character": 34,
+          "text": "Function expected at\n  applyOp\nbut this term has type\n  ?m.4\n\nNote: Expected a function because this term is being applied to the argument\n  (.move n x y)\n\nHint: The identifier `applyOp` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 2,
+          "character": 60,
+          "text": "Invalid dotted identifier notation: The expected type of `.ok` could not be determined\n\nHint: Using one of these would be unambiguous:\n  [apply] `Except.ok`\n  [apply] `EST.Out.ok`\n  [apply] `EStateM.Result.ok`"
+        },
+        {
+          "severity": "error",
+          "line": 2,
+          "character": 78,
+          "text": "Application type mismatch: The argument\n  s\nhas type\n  State\nbut is expected to have type\n  Type ?u.19\nin the application\n  Inv s"
+        },
+        {
+          "severity": "error",
+          "line": 3,
+          "character": 8,
+          "text": "Application type mismatch: The argument\n  s'\nhas type\n  State\nbut is expected to have type\n  Type ?u.21\nin the application\n  Inv s'"
+        },
+        {
+          "severity": "error",
+          "line": 4,
+          "character": 9,
+          "text": "Tactic `unfold` failed: Local variable `applyOp` has no definition"
+        },
+        {
+          "severity": "error",
+          "line": 10,
+          "character": 12,
+          "text": "Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression\n  n\nhas type `Amount` which does not have the necessary form."
+        },
+        {
+          "severity": "error",
+          "line": 10,
+          "character": 20,
+          "text": "Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression\n  s\nhas type `State` which does not have the necessary form."
+        },
+        {
+          "severity": "error",
+          "line": 10,
+          "character": 34,
+          "text": "Function expected at\n  applyOp\nbut this term has type\n  ?m.4\n\nNote: Expected a function because this term is being applied to the argument\n  (.hold n x)\n\nHint: The identifier `applyOp` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 10,
+          "character": 58,
+          "text": "Invalid dotted identifier notation: The expected type of `.ok` could not be determined\n\nHint: Using one of these would be unambiguous:\n  [apply] `Except.ok`\n  [apply] `EST.Out.ok`\n  [apply] `EStateM.Result.ok`"
+        },
+        {
+          "severity": "error",
+          "line": 10,
+          "character": 76,
+          "text": "Application type mismatch: The argument\n  s\nhas type\n  State\nbut is expected to have type\n  Type ?u.18\nin the application\n  Inv s"
+        },
+        {
+          "severity": "error",
+          "line": 11,
+          "character": 8,
+          "text": "Application type mismatch: The argument\n  s'\nhas type\n  State\nbut is expected to have type\n  Type ?u.20\nin the application\n  Inv s'"
+        },
+        {
+          "severity": "error",
+          "line": 12,
+          "character": 9,
+          "text": "Tactic `unfold` failed: Local variable `applyOp` has no definition"
+        },
+        {
+          "severity": "error",
+          "line": 18,
+          "character": 9,
+          "text": "Function expected at\n  applyOp\nbut this term has type\n  ?m.4\n\nNote: Expected a function because this term is being applied to the argument\n  (.capture hid y)\n\nHint: The identifier `applyOp` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement."
+        },
+        {
+          "severity": "error",
+          "line": 18,
+          "character": 38,
+          "text": "Invalid dotted identifier notation: The expected type of `.ok` could not be determined\n\nHint: Using one of these would be unambiguous:\n  [apply] `Except.ok`\n  [apply] `EST.Out.ok`\n  [apply] `EStateM.Result.ok`"
+        },
+        {
+          "severity": "error",
+          "line": 18,
+          "character": 56,
+          "text": "Application type mismatch: The argument\n  s\nhas type\n  State\nbut is expected to have type\n  Type ?u.14\nin the application\n  Inv s"
+        },
+        {
+          "severity": "error",
+          "line": 19,
+          "character": 8,
+          "text": "Application type mismatch: The argument\n  s'\nhas type\n  State\nbut is expected to have type\n  Type ?u.16\nin the application\n  Inv s'"
+        },
+        {
+          "severity": "error",
+          "line": 20,
+          "character": 9,
+          "text": "Tactic `unfold` failed: Local variable `applyOp` has no definition"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L8",
+      "cell": 1,
+      "lesson_file": "content/stages/S3/S3.L8.md",
+      "recorded": "RUN-lean-golden-harness",
+      "text_sha256": "5d0ca74e2162962ab059518c785cca2b5b17b9a692933d2d4f1af00c45e1b794",
+      "lines": 10,
+      "source": {
+        "kind": "cell",
+        "sha256": "31f71f6fca196bbeda22dd813eef39e869a31011cf8f284b9a4267ad03a2cfb3"
+      },
+      "elaborated": "with-errors",
+      "errors": 1,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 1
+        }
+      ],
+      "strips": [
+        {
+          "decl": "g0",
+          "kind": "theorem",
+          "lines": [
+            8,
+            8
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 8,
+              "character": 35,
+              "goals": [
+                "⊢ countdown 3 = 0"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 8,
+              "character": 41,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "g",
+          "kind": "theorem",
+          "lines": [
+            9,
+            9
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 9,
+              "character": 36,
+              "goals": [
+                "⊢ countdownWF 3 = 0"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 9,
+              "character": 42,
+              "goals": [
+                "⊢ countdownWF 3 = 0"
+              ]
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "severity": "error",
+          "line": 9,
+          "character": 36,
+          "text": "Tactic `decide` failed to reduce\n  @decide (countdownWF 3 = 0) (instDecidableEqNat (countdownWF 3) 0)\nto `true` or `false`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at\n  (countdownWF 3).beq 0"
+        }
+      ]
+    },
+    {
+      "lesson": "S3.L8",
+      "cell": 2,
+      "lesson_file": "content/stages/S3/S3.L8.md",
+      "recorded": "RUN-lean-golden-harness",
+      "text_sha256": "5c76e2fc5739c24ba2f88936cc20bc1c1347ad4696dc5cb3181bbb69af0b995c",
+      "lines": 11,
+      "source": {
+        "kind": "cell",
+        "sha256": "4cb31006bf95ab029301836015e2f91695f3d04f030a596e9d6ba74b9427a961"
+      },
+      "elaborated": "clean",
+      "errors": 0,
+      "tried": [
+        {
+          "kind": "cell",
+          "errors": 0
+        }
+      ],
+      "strips": [
+        {
+          "decl": "fuel3",
+          "kind": "theorem",
+          "lines": [
+            9,
+            9
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 9,
+              "character": 50,
+              "goals": [
+                "⊢ runFuel 3 10 = Run.outOfFuel"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 9,
+              "character": 56,
+              "goals": []
+            }
+          ]
+        },
+        {
+          "decl": "fuel100",
+          "kind": "theorem",
+          "lines": [
+            10,
+            10
+          ],
+          "states": [
+            {
+              "when": "before",
+              "tactic": "decide",
+              "line": 10,
+              "character": 49,
+              "goals": [
+                "⊢ runFuel 100 10 = Run.done 0"
+              ]
+            },
+            {
+              "when": "end",
+              "tactic": null,
+              "line": 10,
+              "character": 55,
+              "goals": []
+            }
+          ]
+        }
+      ],
+      "messages": []
+    }
+  ]
+}

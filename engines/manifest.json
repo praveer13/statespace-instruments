@@ -1,0 +1,393 @@
+{
+  "manifest": 1,
+  "wire_encoding": "gzip, zlib level 5",
+  "engines": {
+    "z3": {
+      "version": "5.3.1",
+      "label": "Z3 5.3.1 on Pyodide 314.0.7",
+      "sources": [
+        {
+          "id": "pyodide",
+          "version": "314.0.7",
+          "url": "https://registry.npmjs.org/pyodide/-/pyodide-314.0.7.tgz",
+          "sha256": "66b7949e5a0cba2250b586d7e368bf12fb482800748d182c4618254b685ffaa0",
+          "license": "MPL-2.0"
+        },
+        {
+          "id": "z3-solver",
+          "version": "5.3.1.0",
+          "url": "https://files.pythonhosted.org/packages/7b/05/574cc7c432cbd8dd2f29fce6dbe0dffc3dc34d48ec73723de44dc3905489/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
+          "license": "MIT"
+        }
+      ],
+      "assets": [
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.mjs",
+          "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+          "bytes": 17931,
+          "wire": 7161
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.asm.mjs",
+          "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+          "bytes": 1250344,
+          "wire": 261999
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.asm.wasm",
+          "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+          "bytes": 9598218,
+          "wire": 3582449
+        },
+        {
+          "path": "engines/pyodide/314.0.7/python_stdlib.zip",
+          "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+          "bytes": 2545637,
+          "wire": 2503201
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide-lock.json",
+          "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+          "bytes": 119077,
+          "wire": 26858
+        },
+        {
+          "path": "engines/z3/5.3.1.0/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
+          "bytes": 6525334,
+          "wire": 6511752
+        }
+      ],
+      "rawBytes": 20056541,
+      "firstLoadBytes": 12893420
+    },
+    "datalog": {
+      "version": "5.3.1",
+      "label": "Z3 5.3.1 Fixedpoint on Pyodide 314.0.7",
+      "sources": [
+        {
+          "id": "pyodide",
+          "version": "314.0.7",
+          "url": "https://registry.npmjs.org/pyodide/-/pyodide-314.0.7.tgz",
+          "sha256": "66b7949e5a0cba2250b586d7e368bf12fb482800748d182c4618254b685ffaa0",
+          "license": "MPL-2.0"
+        },
+        {
+          "id": "z3-solver",
+          "version": "5.3.1.0",
+          "url": "https://files.pythonhosted.org/packages/7b/05/574cc7c432cbd8dd2f29fce6dbe0dffc3dc34d48ec73723de44dc3905489/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
+          "license": "MIT"
+        }
+      ],
+      "assets": [
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.mjs",
+          "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+          "bytes": 17931,
+          "wire": 7161
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.asm.mjs",
+          "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+          "bytes": 1250344,
+          "wire": 261999
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.asm.wasm",
+          "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+          "bytes": 9598218,
+          "wire": 3582449
+        },
+        {
+          "path": "engines/pyodide/314.0.7/python_stdlib.zip",
+          "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+          "bytes": 2545637,
+          "wire": 2503201
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide-lock.json",
+          "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+          "bytes": 119077,
+          "wire": 26858
+        },
+        {
+          "path": "engines/z3/5.3.1.0/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
+          "bytes": 6525334,
+          "wire": 6511752
+        }
+      ],
+      "rawBytes": 20056541,
+      "firstLoadBytes": 12893420
+    },
+    "pglite": {
+      "version": "0.5.11",
+      "label": "PGlite 0.5.11 (PostgreSQL 18.6)",
+      "sources": [
+        {
+          "id": "pglite",
+          "version": "0.5.11",
+          "url": "https://registry.npmjs.org/@electric-sql/pglite/-/pglite-0.5.11.tgz",
+          "sha256": "8d0d60091cd0630df4247c0e84d496fe6adb93f4b272a1ee395e9b78dc253e95",
+          "license": "Apache-2.0"
+        }
+      ],
+      "assets": [
+        {
+          "path": "engines/pglite/0.5.11/dist/index.js",
+          "sha256": "2c78b1ff62904e112b6c6628244858c7974d68b48d6d9330af8822244910844f",
+          "bytes": 483315,
+          "wire": 99606
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-3OMHRXTA.js",
+          "sha256": "5bb49743e0a917c92828f7558be3df26f549d64c0bffc80de92f5fbb21f37a79",
+          "bytes": 18587,
+          "wire": 6498
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-7NIVBDG7.js",
+          "sha256": "161f0b0ea69bcae99be2a09ddec378ca6d3d8687effdc8ee5cf6096dda843706",
+          "bytes": 4220,
+          "wire": 1540
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-F4GETNPB.js",
+          "sha256": "5ab11fd9fd74b259484f42a7855cd9569a5fe6ee1cf3c032238ac43a59511d97",
+          "bytes": 998,
+          "wire": 514
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-NNS5RQRF.js",
+          "sha256": "e04c14da71c248d5e7e02f45df665b8e2b136526ee0bef419274bb2b345a1017",
+          "bytes": 2174,
+          "wire": 1058
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-O56QGQDD.js",
+          "sha256": "a3239ef94a90d12af61de0f79e096a1f52ca484aa35aed476b02f101fed7de41",
+          "bytes": 917,
+          "wire": 571
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-QY3QWFKW.js",
+          "sha256": "bff6d3144dd6ea2689b00d9d0eea1ea2267b9cc14505fb9107b6194c1832bdea",
+          "bytes": 1335,
+          "wire": 715
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/chunk-R5JPZYG3.js",
+          "sha256": "b69e18e8f5bd18d0b024d88b63c45dec1720155ef1a9cf52095268ce31c548d9",
+          "bytes": 103277,
+          "wire": 33564
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/pglite.wasm",
+          "sha256": "6b290789f89aabf0052a975eee03cf97430f2a082938fe18137b246aaf1136b5",
+          "bytes": 10123263,
+          "wire": 3446860
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/pglite.data",
+          "sha256": "47ff29bdadf0dfd8af60bb01313c7f918c22518ee48772fc40ed49028a81ccc4",
+          "bytes": 6291000,
+          "wire": 1844463
+        },
+        {
+          "path": "engines/pglite/0.5.11/dist/initdb.wasm",
+          "sha256": "985d9b6f0715e9850efb5798ce51f64e7fd8629d70970fd1a61e75d7bae0bde7",
+          "bytes": 395242,
+          "wire": 145462
+        }
+      ],
+      "rawBytes": 17424328,
+      "firstLoadBytes": 5580851
+    },
+    "spectacle": {
+      "version": "5827c22",
+      "label": "Spectacle 5827c22 (TLA+ in the browser)",
+      "sources": [
+        {
+          "id": "spectacle-lodash",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/js/lib/lodash.min.js",
+          "sha256": "a9705dfc47c0763380d851ab1801be6f76019f6b67e40e9b873f8b4a0603f7a9",
+          "license": "MIT (lodash)"
+        },
+        {
+          "id": "spectacle-hash-sum",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/js/hash-sum/hash-sum.js",
+          "sha256": "1173797d0ed0c3a8c5976c0e65c2dd09fd2331d3447a1f4911b0dc7536299015",
+          "license": "MIT (hash-sum)"
+        },
+        {
+          "id": "spectacle-tree-sitter",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/js/tree-sitter.js",
+          "sha256": "faaefedb1c182eb51cad866a0a82cce6787f0e5a90110e3ca9ec048842a84423",
+          "license": "MIT (web-tree-sitter)"
+        },
+        {
+          "id": "spectacle-eval",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/js/eval.js",
+          "sha256": "40bc82440fe7e398662faeda767aaec6be68d8b1ba17da862aa24ef5990b609b",
+          "license": "MIT"
+        },
+        {
+          "id": "spectacle-tree-sitter-wasm",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/js/tree-sitter.wasm",
+          "sha256": "17382e1a69bd628107e8dfe37d31d57f7ba948e5f2da77e56a8aa010488dc5ae",
+          "license": "MIT (web-tree-sitter)"
+        },
+        {
+          "id": "spectacle-tlaplus-wasm",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/js/tree-sitter-tlaplus.wasm",
+          "sha256": "729b5b9ada1f2d49613b4436d2f345f1bbf239edf1cb2d0a616c89fca82a0cac",
+          "license": "MIT (tree-sitter-tlaplus)"
+        },
+        {
+          "id": "spectacle-license",
+          "version": "5827c22043216ea422b9dada64fdec19d6d8e5c4",
+          "url": "https://raw.githubusercontent.com/will62794/spectacle/5827c22043216ea422b9dada64fdec19d6d8e5c4/LICENSE",
+          "sha256": "a81201d3d32e4fc9f2a16f7ab887d1a9e009ae64da40b2dd2c96bf0eb9bac431",
+          "license": "MIT"
+        }
+      ],
+      "assets": [
+        {
+          "path": "engines/spectacle/5827c22/lodash/lodash.min.js",
+          "sha256": "a9705dfc47c0763380d851ab1801be6f76019f6b67e40e9b873f8b4a0603f7a9",
+          "bytes": 73015,
+          "wire": 26145
+        },
+        {
+          "path": "engines/spectacle/5827c22/hash-sum/hash-sum.js",
+          "sha256": "1173797d0ed0c3a8c5976c0e65c2dd09fd2331d3447a1f4911b0dc7536299015",
+          "bytes": 1588,
+          "wire": 636
+        },
+        {
+          "path": "engines/spectacle/5827c22/tree-sitter/tree-sitter.js",
+          "sha256": "faaefedb1c182eb51cad866a0a82cce6787f0e5a90110e3ca9ec048842a84423",
+          "bytes": 72563,
+          "wire": 16667
+        },
+        {
+          "path": "engines/spectacle/5827c22/eval/eval.js",
+          "sha256": "40bc82440fe7e398662faeda767aaec6be68d8b1ba17da862aa24ef5990b609b",
+          "bytes": 220579,
+          "wire": 50012
+        },
+        {
+          "path": "engines/spectacle/5827c22/tree-sitter-wasm/tree-sitter.wasm",
+          "sha256": "17382e1a69bd628107e8dfe37d31d57f7ba948e5f2da77e56a8aa010488dc5ae",
+          "bytes": 186526,
+          "wire": 75774
+        },
+        {
+          "path": "engines/spectacle/5827c22/tlaplus-wasm/tree-sitter-tlaplus.wasm",
+          "sha256": "729b5b9ada1f2d49613b4436d2f345f1bbf239edf1cb2d0a616c89fca82a0cac",
+          "bytes": 4983108,
+          "wire": 258275
+        },
+        {
+          "path": "engines/spectacle/5827c22/license/LICENSE",
+          "sha256": "a81201d3d32e4fc9f2a16f7ab887d1a9e009ae64da40b2dd2c96bf0eb9bac431",
+          "bytes": 1072,
+          "wire": 650
+        }
+      ],
+      "rawBytes": 5538451,
+      "firstLoadBytes": 428159
+    },
+    "goal-replay": {
+      "version": "4.35.0",
+      "label": "Goal Replay: goal strips from Lean 4.35.0 elaboration (RUN-goal-replay)",
+      "sources": [
+        {
+          "id": "goal-strips",
+          "version": "4.35.0",
+          "url": "repo:runs/RUN-goal-replay/goal-strips.json",
+          "sha256": "93c6d479602b3562d739b15ebd55e53b6a5ec98bc90bccf92a3c6d518bf2dca5",
+          "license": "CC-BY-4.0"
+        }
+      ],
+      "assets": [
+        {
+          "path": "engines/goal-replay/4.35.0/goal-strips.json",
+          "sha256": "93c6d479602b3562d739b15ebd55e53b6a5ec98bc90bccf92a3c6d518bf2dca5",
+          "bytes": 56643,
+          "wire": 7474
+        }
+      ],
+      "rawBytes": 56643,
+      "firstLoadBytes": 7474
+    },
+    "derivation": {
+      "version": "5.3.1",
+      "label": "Z3 5.3.1 on Pyodide 314.0.7, the Derivation Board",
+      "sources": [
+        {
+          "id": "pyodide",
+          "version": "314.0.7",
+          "url": "https://registry.npmjs.org/pyodide/-/pyodide-314.0.7.tgz",
+          "sha256": "66b7949e5a0cba2250b586d7e368bf12fb482800748d182c4618254b685ffaa0",
+          "license": "MPL-2.0"
+        },
+        {
+          "id": "z3-solver",
+          "version": "5.3.1.0",
+          "url": "https://files.pythonhosted.org/packages/7b/05/574cc7c432cbd8dd2f29fce6dbe0dffc3dc34d48ec73723de44dc3905489/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
+          "license": "MIT"
+        }
+      ],
+      "assets": [
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.mjs",
+          "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+          "bytes": 17931,
+          "wire": 7161
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.asm.mjs",
+          "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+          "bytes": 1250344,
+          "wire": 261999
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide.asm.wasm",
+          "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+          "bytes": 9598218,
+          "wire": 3582449
+        },
+        {
+          "path": "engines/pyodide/314.0.7/python_stdlib.zip",
+          "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+          "bytes": 2545637,
+          "wire": 2503201
+        },
+        {
+          "path": "engines/pyodide/314.0.7/pyodide-lock.json",
+          "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+          "bytes": 119077,
+          "wire": 26858
+        },
+        {
+          "path": "engines/z3/5.3.1.0/z3_solver-5.3.1.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+          "sha256": "62143abf1f1f94e9b1c173db60b2f6b747f4b0780da81f4b05342bdef006bf90",
+          "bytes": 6525334,
+          "wire": 6511752
+        }
+      ],
+      "rawBytes": 20056541,
+      "firstLoadBytes": 12893420
+    }
+  }
+}

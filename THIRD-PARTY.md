@@ -1,6 +1,6 @@
 # Third-party software served from this origin
 
-The course's own files here (`index.html`, `sw.js`, and each build's `host.html`, `host.js`, `worker.mjs`, `cases.mjs` and `manifest.json`) are under the MIT License in `LICENSE`, like the code in the main repository. Each build under `b/` also serves unmodified engine files from the projects below, which keep their own licenses.
+The course's own files here (`index.html`, `sw.js`, the root `host.html`, `instrument.html` and `assets/`, and each build's `host.html`, `host.js`, `worker.mjs`, `cases.mjs` and `manifest.json`) are under the MIT License in `LICENSE`, like the code in the main repository. Each build under `b/` also serves unmodified engine files from the projects below, which keep their own licenses.
 
 | Path under `b/<build>/engines/` | Component | Version | License | Source |
 |---|---|---|---|---|
@@ -9,3 +9,15 @@ The course's own files here (`index.html`, `sw.js`, and each build's `host.html`
 | `z3/5.3.1.0/` | [Z3](https://github.com/Z3Prover/z3) as the `z3-solver` wheel for Pyodide | 5.3.1.0 | MIT, Copyright (c) Microsoft Corporation ([text](LICENSES/Z3-MIT.txt)) | the wheel's metadata names `https://github.com/Z3Prover/z3` |
 
 The files are served exactly as the packages ship them. The license texts under `LICENSES/` were fetched on 2026-10-25 from mozilla.org (MPL-2.0), the CPython 3.14 branch (`LICENSE`) and the Z3 repository (`LICENSE.txt`).
+
+## The root build (`engines/`)
+
+The root `host.html` serves the engines below from `engines/`, unmodified as each package ships them.
+
+| Path under `engines/` | Component | Version | License |
+|---|---|---|---|
+| `pyodide/314.0.7/` | Pyodide (with CPython's stdlib zip) | 314.0.7 | MPL-2.0 ([text](LICENSES/MPL-2.0.txt)); PSF for `python_stdlib.zip` ([text](LICENSES/Python-2.0.txt)) |
+| `z3/5.3.1.0/` | Z3, the `z3-solver` wheel for Pyodide | 5.3.1.0 | MIT ([text](LICENSES/Z3-MIT.txt)) |
+| `pglite/0.5.11/` | PGlite (`@electric-sql/pglite`), with PostgreSQL 18.6 compiled in | 0.5.11 | Apache-2.0 ([text](LICENSES/Apache-2.0.txt)) for PGlite; PostgreSQL License ([text](LICENSES/PostgreSQL.txt)) for PostgreSQL |
+| `spectacle/5827c22/` | Spectacle `eval.js`, with web-tree-sitter, tree-sitter-tlaplus, lodash and hash-sum as Spectacle ships them | commit 5827c22 | MIT ([text](LICENSES/Spectacle-MIT.txt)), each library under its own MIT licence |
+| `goal-replay/4.35.0/` | the course's own goal strips (RUN-goal-replay) | 4.35.0 | CC-BY-4.0, the course's content licence |
